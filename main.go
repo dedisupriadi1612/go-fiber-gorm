@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"go-fiber-gorm/router"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	app := fiber.New()
+
+	router.Router(app)
+
+	app.Listen(":3000")
 }
